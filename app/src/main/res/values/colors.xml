@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- NGO Premium Palette -->
+    <color name="ngo_primary">#00897B</color>
+    <color name="ngo_primary_dark">#00695C</color>
+    <color name="ngo_primary_light">#4DB6AC</color>
+    <color name="ngo_accent">#FFCA28</color>
+    <color name="ngo_accent_dark">#F57F17</color>
+    
+    <!-- Backgrounds -->
+    <color name="bg_main">#F8FAFB</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="card_bg">#FFFFFF</color> <!-- Added for compatibility -->
+    <color name="bg_gradient_start">#00695C</color>
+    <color name="bg_gradient_end">#004D40</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_dark">#1A1A1A</color> <!-- Added for compatibility -->
+    <color name="text_secondary">#757575</color>
+    <color name="text_muted">#757575</color> <!-- Added for compatibility -->
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+    
+    <!-- Status Colors -->
+    <color name="status_approved">#4CAF50</color>
+    <color name="status_pending">#FF9800</color>
+    <color name="status_rejected">#F44336</color>
+    
+    <color name="card_shadow">#1A000000</color>
+</resources>

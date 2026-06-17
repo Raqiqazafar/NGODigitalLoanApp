@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_ehsan_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_ehsan_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NGODigitalLoan">
+        <activity
+            android:name=".AddBorrowerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RepaymentHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoanDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".LoansListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApplyLoanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoanRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoanReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminSettingsActivity"
+            android:exported="false" />
+        <activity android:name=".PayInstallmentActivity" />
+    </application>
+
+
+</manifest>

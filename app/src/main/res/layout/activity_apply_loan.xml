@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <View
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_premium_gradient"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/applyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply for Loan"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/applyTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- 1. LOAN PURPOSE -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. Loan Purpose"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:startIconDrawable="@android:drawable/ic_menu_agenda"
+                        app:startIconTint="@color/ngo_primary"
+                        android:layout_marginBottom="12dp">
+                        <AutoCompleteTextView
+                            android:id="@+id/categoryAutoComplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Select Category"
+                            android:inputType="none"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- 🌟 HIDDEN "OTHER" CATEGORY INPUT 🌟 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/otherCategoryLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/otherCategoryInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Please specify your loan type"
+                            android:inputType="text"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- 🌟 2. MONTHLY INCOME 🌟 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2. Monthly Income (Rs)"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:startIconDrawable="@android:drawable/ic_menu_sort_by_size"
+                        app:startIconTint="@color/ngo_primary"
+                        android:layout_marginBottom="24dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/incomeInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter your average monthly income"
+                            android:inputType="number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- 3. REPAYMENT PLAN -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3. Repayment Plan"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"/>
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/loanTypeToggleGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:checkedButton="@+id/btnShortTerm"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShortTerm"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:text="Short Term\n(6 Months)"
+                            app:strokeColor="@color/ngo_primary"
+                            android:textColor="@color/text_dark"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLongTerm"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:text="Long Term\n(12-24 M)"
+                            app:strokeColor="@color/ngo_primary"
+                            android:textColor="@color/text_dark"/>
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <!-- 4. REQUIRED AMOUNT -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="4. Required Amount"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/amountLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs 50,000"
+                            android:textColor="@color/ngo_primary"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+
+                    <!-- 🌟 REAL AMOUNT SLIDER 🌟 -->
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/amountSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="50000"
+                        android:valueTo="500000"
+                        android:value="50000"
+                        android:stepSize="50000"
+                        app:thumbColor="@color/ngo_primary"
+                        app:trackColorActive="@color/ngo_primary_dark"
+                        app:trackColorInactive="#E0E0E0"
+                        app:labelBehavior="floating"
+                        android:layout_marginBottom="24dp"/>
+
+                    <!-- 5. DATE -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5. When do you need funds?"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:startIconDrawable="@android:drawable/ic_menu_today"
+                        app:startIconTint="@color/ngo_primary"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dateInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Tap to pick a date"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:cursorVisible="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- 🌟 6. DETAILED REASON 🌟 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="6. Detailed Reason / Description"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        android:layout_marginBottom="24dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/reasonInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:gravity="top|start"
+                            android:inputType="textMultiLine"
+                            android:hint="Explain why you need this loan..."/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/termsSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="I agree to the NGO's Terms &amp; Conditions"
+                        android:textColor="#757575"
+                        android:textSize="14sp"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/ngo_primary"
+                        android:layout_marginBottom="32dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/submitLoanButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="SUBMIT APPLICATION"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="@color/ngo_primary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

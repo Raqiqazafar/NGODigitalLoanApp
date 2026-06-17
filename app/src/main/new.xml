@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/bg_main">
+
+    <!-- Premium Header -->
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:layout_height="220dp" android:background="@drawable/bg_premium_gradient">
+
+        <androidx.appcompat.widget.Toolbar android:id="@+id/profileToolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back" app:title="My Profile"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_marginTop="-80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center_horizontal"
+            android:paddingBottom="40dp">
+
+            <!-- Profile Image Overlap -->
+            <com.google.android.material.imageview.ShapeableImageView android:id="@+id/profileImage"
+                android:layout_width="130dp" android:layout_height="130dp" android:padding="5dp"
+                android:background="@color/white" android:src="@android:drawable/ic_menu_camera"
+                app:tint="@color/ngo_primary_dark"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/white" app:strokeWidth="5dp" android:elevation="8dp" />
+
+            <TextView android:id="@+id/userName" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Muhammad Talha"
+                android:textColor="@color/text_dark" android:textSize="26sp"
+                android:textStyle="bold" android:layout_marginTop="12dp" />
+
+            <TextClock android:id="@+id/realTimeClock" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:format12Hour="'Last Login: ' hh:mm a"
+                android:textColor="@color/ngo_primary" android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Stats Cards -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingHorizontal="16dp"
+                android:layout_marginTop="24dp" android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:strokeWidth="1dp" app:strokeColor="#EEEEEE">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical"
+                        android:gravity="center" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="2"
+                            android:textSize="32sp" android:textStyle="bold"
+                            android:textColor="@color/text_dark" />
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Active Loans"
+                            android:textSize="13sp" android:textColor="@color/text_muted" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:strokeWidth="1dp" app:strokeColor="#EEEEEE">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical"
+                        android:gravity="center" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="A+"
+                            android:textSize="32sp" android:textStyle="bold"
+                            android:textColor="@color/ngo_primary" />
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Trust Score"
+                            android:textSize="13sp" android:textColor="@color/text_muted" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Account Details" android:textStyle="bold" android:textSize="18sp"
+                android:textColor="@color/text_dark" android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp" android:layout_marginBottom="12dp" />
+
+            <!-- Form Card -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginHorizontal="20dp"
+                app:cardBackgroundColor="@color/white" app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Operation City"
+                        app:startIconDrawable="@android:drawable/ic_dialog_map"
+                        app:startIconTint="@color/ngo_primary" app:boxCornerRadiusTopStart="15dp"
+                        app:boxCornerRadiusTopEnd="15dp" app:boxCornerRadiusBottomStart="15dp"
+                        app:boxCornerRadiusBottomEnd="15dp" android:layout_marginBottom="20dp">
+                        <AutoCompleteTextView android:id="@+id/cityAutoComplete"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Business Sector"
+                        app:startIconDrawable="@android:drawable/ic_menu_sort_by_size"
+                        app:startIconTint="@color/ngo_primary" app:boxCornerRadiusTopStart="15dp"
+                        app:boxCornerRadiusTopEnd="15dp" app:boxCornerRadiusBottomStart="15dp"
+                        app:boxCornerRadiusBottomEnd="15dp" android:layout_marginBottom="20dp">
+                        <MultiAutoCompleteTextView android:id="@+id/skillsMultiAutoComplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical" android:layout_marginBottom="20dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Age Verification:"
+                            android:textColor="@color/text_dark" android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <NumberPicker android:id="@+id/ageNumberPicker"
+                            android:layout_width="wrap_content" android:layout_height="90dp"
+                            android:theme="@style/Theme.MaterialComponents.Light" />
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp" app:dividerColor="#F0F0F0" />
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Push Notifications"
+                            android:textColor="@color/text_dark" android:textStyle="bold" />
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/notificationToggle" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:checked="true"
+                            app:thumbTint="@color/ngo_primary"
+                            app:trackTint="@color/ngo_primary_light" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Rating Section -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Rate your App Experience" android:textAlignment="center"
+                android:textColor="@color/text_muted" android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp" />
+
+            <RatingBar android:id="@+id/appRatingBar"
+                style="@android:style/Widget.DeviceDefault.RatingBar.Indicator"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" android:numStars="5"
+                android:isIndicator="false" android:stepSize="1.0" android:rating="4.5"
+                android:progressTint="@color/ngo_accent" android:layout_marginBottom="32dp" />
+
+            <!-- Logout Button -->
+            <com.google.android.material.button.MaterialButton android:id="@+id/logoutButton"
+                android:layout_width="match_parent" android:layout_height="65dp"
+                android:layout_marginHorizontal="24dp" android:text="SECURE LOGOUT"
+                android:textSize="16sp" android:textStyle="bold" app:cornerRadius="16dp"
+                app:elevation="4dp" app:backgroundTint="#E53935"
+                app:icon="@android:drawable/ic_lock_power_off" app:iconGravity="textStart" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

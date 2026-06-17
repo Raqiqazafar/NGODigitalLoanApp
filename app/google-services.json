@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "380664992824",
+    "firebase_url": "https://ehsan-digital-default-rtdb.firebaseio.com",
+    "project_id": "ehsan-digital",
+    "storage_bucket": "ehsan-digital.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380664992824:android:578832b1d22a0e270c42cd",
+        "android_client_info": {
+          "package_name": "com.example.ngodigitalloanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380664992824-gh42jkobg859mf3c055got7iqlhp2gh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ngodigitalloanapp",
+            "certificate_hash": "d9f2761018353f1a7e7f25b0ab0cdad0a5bcec1c"
+          }
+        },
+        {
+          "client_id": "380664992824-sepscc2jhmq4cpsrhaf05ad914fs6ngv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH3-Aq83BAmPrSzyCLQ6ydS4a0y-q0zBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380664992824-sepscc2jhmq4cpsrhaf05ad914fs6ngv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
