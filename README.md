@@ -220,5 +220,3 @@ Built as a 6th Semester project for BS Computer Science.
 
 This project is for academic/educational purposes.
 
-
-> ⭐ If you found this project helpful, please give it a star on GitHub!
